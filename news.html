@@ -21,28 +21,52 @@
     <style>
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        #mobileMenu { transition: all 0.5s ease-in-out; }
+        .nav-link { transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <a href="index.html"><img src="RewaqLogo12.png" alt="Logo" class="h-14"></a>
-            <div class="hidden md:flex space-x-8 space-x-reverse">
-                <a href="index.html" class="font-black text-primary hover:text-secondary">الرئيسية</a>
-                <a href="index.html#about" class="font-black text-primary hover:text-secondary">من نحن</a>
-                <a href="news.html" class="font-black text-secondary">الأخبار</a>
-                <a href="jobs.html" class="font-black text-primary hover:text-secondary">الوظائف</a>
-                <a href="contact.html" class="font-black text-primary hover:text-secondary">تواصل معنا</a>
+    <!-- الهيدر الاحترافي المتفاعل -->
+    <nav id="mainNav" class="fixed w-full z-50 top-0 transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="navContainer" class="flex justify-between items-center h-24 transition-all duration-500">
+                <div class="flex-shrink-0 flex items-center h-full py-2">
+                    <a href="index.html">
+                        <img id="logoImg" src="RewaqLogo12.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain transition-all duration-500" style="filter: invert(1) brightness(2); mix-blend-mode: screen;">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="index.html" class="nav-link text-white font-black hover:text-secondary transition duration-300">الرئيسية</a>
+                    <a href="news.html" class="nav-link text-secondary font-black transition duration-300">الأخبار</a>
+                    <a href="jobs.html" class="nav-link text-white font-black hover:text-secondary transition duration-300">الوظائف</a>
+                    <a href="contact.html" class="nav-link text-white font-black hover:text-secondary transition duration-300">تواصل معنا</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-secondary focus:outline-none transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <header class="bg-primary py-20 text-white text-center">
-        <h1 class="text-4xl md:text-5xl font-black mb-4">المركز الإعلامي</h1>
-        <p class="text-gray-300 max-w-2xl mx-auto px-4">تابع أحدث أخبارنا، إنجازاتنا، والفعاليات التي نشارك بها في رواق الخليج.</p>
+    <!-- منيو الجوال -->
+    <div id="mobileMenu" class="fixed inset-0 z-[60] bg-primary/98 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 transition-all duration-500 opacity-0 invisible translate-x-full">
+        <button id="closeMobileMenu" class="absolute top-8 left-8 text-white text-3xl hover:text-secondary transition">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html" class="mobile-nav-link text-white text-2xl font-black">الرئيسية</a>
+        <a href="news.html" class="mobile-nav-link text-secondary text-2xl font-black">الأخبار</a>
+        <a href="jobs.html" class="mobile-nav-link text-white text-2xl font-black">الوظائف</a>
+        <a href="contact.html" class="bg-secondary text-white px-10 py-3 rounded-full font-black text-xl">تواصل معنا</a>
+    </div>
+
+    <header class="bg-primary py-16 text-white text-center">
+        <h1 class="text-3xl md:text-4xl font-black mb-3">المركز الإعلامي</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto px-4 text-sm md:text-base leading-relaxed">تابع أحدث أخبارنا، إنجازاتنا، والفعاليات التي نشارك بها في رواق الخليج.</p>
     </header>
 
-    <section class="py-16 max-w-7xl mx-auto px-4">
+    <section class="py-12 max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- خبر 1 -->
             <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 reveal active">
@@ -50,10 +74,10 @@
                     <img src="agreement.jpg" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl"><span class="text-primary font-black text-sm">15 مايو 2026</span></div>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">توقيع اتفاقية استراتيجية لتطوير مشاريع سكنية ذكية</h3>
-                    <p class="text-gray-500 text-sm mb-6">خطوة استراتيجية نحو تعزيز الابتكار في القطاع السكني بالمملكة باستخدام أحدث التقنيات الهندسية لرفع جودة الحياة.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold"><span>اقرأ المزيد</span><i class="fas fa-arrow-left"></i></a>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">توقيع اتفاقية استراتيجية لتطوير مشاريع سكنية ذكية</h3>
+                    <p class="text-gray-500 text-xs mb-4 leading-relaxed">خطوة استراتيجية نحو تعزيز الابتكار في القطاع السكني بالمملكة باستخدام أحدث التقنيات الهندسية لرفع جودة الحياة.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm"><span>اقرأ المزيد</span><i class="fas fa-arrow-left text-xs"></i></a>
                 </div>
             </div>
             <!-- خبر 2 -->
@@ -62,10 +86,10 @@
                     <img src="news2.jpg" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl"><span class="text-primary font-black text-sm">02 مايو 2026</span></div>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">رواق الخليج تحصد جائزة التميز في التصميم المعماري</h3>
-                    <p class="text-gray-500 text-sm mb-6">فخورون بحصولنا على هذه الجائزة المرموقة التي تتوج جهود فريقنا في ابتكار تصاميم معمارية فريدة تلبي تطلعات المستقبل.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold"><span>اقرأ المزيد</span><i class="fas fa-arrow-left"></i></a>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">رواق الخليج تحصد جائزة التميز في التصميم المعماري</h3>
+                    <p class="text-gray-500 text-xs mb-4 leading-relaxed">فخورون بحصولنا على هذه الجائزة المرموقة التي تتوج جهود فريقنا في ابتكار تصاميم معمارية فريدة تلبي تطلعات المستقبل.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm"><span>اقرأ المزيد</span><i class="fas fa-arrow-left text-xs"></i></a>
                 </div>
             </div>
              <!-- خبر 3 -->
@@ -74,20 +98,81 @@
                     <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl"><span class="text-primary font-black text-sm">20 أبريل 2026</span></div>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">اعتماد تقنيات الذكاء الاصطناعي في نمذجة (BIM)</h3>
-                    <p class="text-gray-500 text-sm mb-6">نستمر في ريادة التحول الرقمي بدمج حلول الذكاء الاصطناعي لرفع كفاءة النمذجة وإدارة دورة حياة المشروع.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold"><span>اقرأ المزيد</span><i class="fas fa-arrow-left"></i></a>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">اعتماد تقنيات الذكاء الاصطناعي في نمذجة (BIM)</h3>
+                    <p class="text-gray-500 text-xs mb-4 leading-relaxed">نستمر في ريادة التحول الرقمي بدمج حلول الذكاء الاصطناعي لرفع كفاءة النمذجة وإدارة دورة حياة المشروع.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm"><span>اقرأ المزيد</span><i class="fas fa-arrow-left text-xs"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-primary text-white py-10 text-center border-t-4 border-secondary mt-20">
-        <p class="font-medium text-sm">جميع الحقوق محفوظة &copy; 2026 رواق الخليج للاستشارات الهندسية</p>
+    <footer class="bg-primary text-white py-8 text-center border-t-4 border-secondary mt-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-right mb-6">
+            <div>
+               <h3 class="text-xl font-bold mb-4">رواق الخليج</h3>
+               <p class="text-sm text-gray-400">نحن نبني المستقبل بعقول هندسية وطنية ورؤية عالمية.</p>
+           </div>
+           <div>
+               <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+               <ul class="text-sm text-gray-400 space-y-2 font-medium">
+                   <li><a href="index.html" class="hover:text-secondary">الرئيسية</a></li>
+                   <li><a href="news.html" class="hover:text-secondary">الأخبار والفعاليات</a></li>
+                   <li><a href="jobs.html" class="hover:text-secondary">فرص العمل</a></li>
+               </ul>
+           </div>
+           <div>
+               <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+               <p class="text-sm text-gray-400">الرياض، المملكة العربية السعودية</p>
+               <p class="text-sm text-gray-400">info@riwaqalkhaleej.com</p>
+           </div>
+        </div>
+        <p class="font-medium text-xs text-gray-500 pt-6 border-t border-gray-800">جميع الحقوق محفوظة &copy; 2026 رواق الخليج للاستشارات الهندسية</p>
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainNav = document.getElementById('mainNav');
+            const navContainer = document.getElementById('navContainer');
+            const logoImg = document.getElementById('logoImg');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    mainNav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md');
+                    mainNav.classList.remove('bg-transparent');
+                    navContainer.classList.replace('h-24', 'h-16');
+                    navLinks.forEach(link => { if(!link.classList.contains('text-secondary')) link.classList.replace('text-white', 'text-gray-700') });
+                    logoImg.style.filter = 'none';
+                    logoImg.style.mixBlendMode = 'multiply';
+                    mobileMenuBtn.classList.replace('text-white', 'text-primary');
+                } else {
+                    mainNav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md');
+                    mainNav.classList.add('bg-transparent');
+                    navContainer.classList.replace('h-16', 'h-24');
+                    navLinks.forEach(link => { if(!link.classList.contains('text-secondary')) link.classList.replace('text-gray-700', 'text-white') });
+                    logoImg.style.filter = 'invert(1) brightness(2)';
+                    logoImg.style.mixBlendMode = 'screen';
+                    mobileMenuBtn.classList.replace('text-primary', 'text-white');
+                }
+            });
+
+            const toggleMobileMenu = (isOpen) => {
+                if (isOpen) {
+                    mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileMenu.classList.add('opacity-0', 'invisible', 'translate-x-full');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            mobileMenuBtn.addEventListener('click', () => toggleMobileMenu(true));
+            closeMobileMenu.addEventListener('click', () => toggleMobileMenu(false));
+
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -98,6 +183,7 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
+        });
     </script>
 </body>
 </html>
