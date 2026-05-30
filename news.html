@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المركز الإعلامي | رواق الخليج</title>
+    <link rel="icon" type="image/png" href="RewaqLogo12.png">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#0f2c4c', secondary: '#d97706' },
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html"><img src="RewaqLogo12.png" alt="Logo" class="h-14"></a>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="index.html" class="font-black text-primary hover:text-secondary">الرئيسية</a>
+                <a href="index.html#about" class="font-black text-primary hover:text-secondary">من نحن</a>
+                <a href="news.html" class="font-black text-secondary">الأخبار</a>
+                <a href="jobs.html" class="font-black text-primary hover:text-secondary">الوظائف</a>
+                <a href="contact.html" class="font-black text-primary hover:text-secondary">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary py-20 text-white text-center">
+        <h1 class="text-4xl md:text-5xl font-black mb-4">المركز الإعلامي</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto px-4">تابع أحدث أخبارنا، إنجازاتنا، والفعاليات التي نشارك بها في رواق الخليج.</p>
+    </header>
+
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- خبر 1 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 reveal active">
+                <div class="relative overflow-hidden h-64">
+                    <img src="agreement.jpg" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl"><span class="text-primary font-black text-sm">15 مايو 2026</span></div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">توقيع اتفاقية استراتيجية لتطوير مشاريع سكنية ذكية</h3>
+                    <p class="text-gray-500 text-sm mb-6">خطوة استراتيجية نحو تعزيز الابتكار في القطاع السكني بالمملكة باستخدام أحدث التقنيات الهندسية لرفع جودة الحياة.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold"><span>اقرأ المزيد</span><i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+            <!-- خبر 2 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 reveal active">
+                <div class="relative overflow-hidden h-64">
+                    <img src="news2.jpg" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl"><span class="text-primary font-black text-sm">02 مايو 2026</span></div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">رواق الخليج تحصد جائزة التميز في التصميم المعماري</h3>
+                    <p class="text-gray-500 text-sm mb-6">فخورون بحصولنا على هذه الجائزة المرموقة التي تتوج جهود فريقنا في ابتكار تصاميم معمارية فريدة تلبي تطلعات المستقبل.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold"><span>اقرأ المزيد</span><i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+             <!-- خبر 3 -->
+             <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 reveal active">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl"><span class="text-primary font-black text-sm">20 أبريل 2026</span></div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">اعتماد تقنيات الذكاء الاصطناعي في نمذجة (BIM)</h3>
+                    <p class="text-gray-500 text-sm mb-6">نستمر في ريادة التحول الرقمي بدمج حلول الذكاء الاصطناعي لرفع كفاءة النمذجة وإدارة دورة حياة المشروع.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-bold"><span>اقرأ المزيد</span><i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-10 text-center border-t-4 border-secondary mt-20">
+        <p class="font-medium text-sm">جميع الحقوق محفوظة &copy; 2026 رواق الخليج للاستشارات الهندسية</p>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>

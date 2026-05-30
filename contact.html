@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | رواق الخليج</title>
+    <link rel="icon" type="image/png" href="RewaqLogo12.png">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#0f2c4c', secondary: '#d97706' },
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html"><img src="RewaqLogo12.png" alt="Logo" class="h-14"></a>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="index.html" class="font-black text-primary hover:text-secondary">الرئيسية</a>
+                <a href="#" class="font-black text-primary hover:text-secondary">الأخبار</a>
+                <a href="#" class="font-black text-primary hover:text-secondary">الوظائف</a>
+                <a href="contact.html" class="font-black text-secondary">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary py-20 text-white text-center">
+        <h1 class="text-4xl md:text-5xl font-black mb-4">تواصل معنا</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto px-4">نحن هنا للإجابة على استفساراتكم ومناقشة مشاريعكم الطموحة.</p>
+    </header>
+
+    <section class="py-16 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- معلومات التواصل -->
+        <div class="space-y-8">
+            <h2 class="text-3xl font-black text-primary">معلومات الاتصال</h2>
+            <div class="flex items-start gap-4">
+                <div class="bg-secondary/10 p-4 rounded-2xl text-secondary"><i class="fas fa-map-marker-alt text-2xl"></i></div>
+                <div>
+                    <h3 class="font-bold text-xl">الموقع</h3>
+                    <p class="text-gray-600">الرياض، المملكة العربية السعودية</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="bg-secondary/10 p-4 rounded-2xl text-secondary"><i class="fas fa-phone-alt text-2xl"></i></div>
+                <div>
+                    <h3 class="font-bold text-xl">الهاتف</h3>
+                    <p class="text-gray-600" dir="ltr">+966 12 345 6789</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="bg-secondary/10 p-4 rounded-2xl text-secondary"><i class="fas fa-envelope text-2xl"></i></div>
+                <div>
+                    <h3 class="font-bold text-xl">البريد الإلكتروني</h3>
+                    <p class="text-gray-600">info@riwaqalkhaleej.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- نموذج التواصل -->
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold mb-2">الاسم الكامل</label>
+                    <input type="text" class="w-full p-4 bg-gray-50 border rounded-xl focus:outline-none focus:border-secondary" placeholder="أدخل اسمك">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2">البريد الإلكتروني</label>
+                    <input type="email" class="w-full p-4 bg-gray-50 border rounded-xl focus:outline-none focus:border-secondary" placeholder="example@mail.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2">الرسالة</label>
+                    <textarea rows="4" class="w-full p-4 bg-gray-50 border rounded-xl focus:outline-none focus:border-secondary" placeholder="كيف يمكننا مساعدتك؟"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-black hover:bg-secondary transition-colors duration-300">إرسال الرسالة</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-10 text-center border-t-4 border-secondary">
+        <p class="font-medium text-sm">جميع الحقوق محفوظة &copy; 2026 رواق الخليج للاستشارات الهندسية</p>
+    </footer>
+</body>
+</html>
