@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | رواق الخليج</title>
+    <link rel="icon" type="image/png" href="RewaqLogo12.png">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#0f2c4c', secondary: '#d97706' },
+                    fontFamily: { sans: ['Tajawal', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .sidebar-link.active { @apply bg-secondary text-white; }
+        .admin-card { @apply bg-white p-6 rounded-2xl shadow-sm border border-gray-100; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <div class="flex min-h-screen">
+        <!-- الشريط الجانبي (Sidebar) -->
+        <aside class="w-64 bg-primary text-white flex flex-col fixed h-full z-50">
+            <div class="p-6 border-b border-white/10 text-center">
+                <img src="RewaqLogo12.png" alt="Logo" class="h-12 mx-auto mb-2" style="filter: invert(1) brightness(2);">
+                <h1 class="text-sm font-black text-secondary">لوحة التحكم الإدارية</h1>
+            </div>
+            <nav class="flex-grow p-4 space-y-2">
+                <a href="#overview" class="sidebar-link active flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10">
+                    <i class="fas fa-chart-pie w-5 text-center"></i> <span>نظرة عامة</span>
+                </a>
+                <a href="#news" class="sidebar-link flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10">
+                    <i class="fas fa-newspaper w-5 text-center"></i> <span>الأخبار</span>
+                </a>
+                <a href="#projects" class="sidebar-link flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10">
+                    <i class="fas fa-project-diagram w-5 text-center"></i> <span>المشاريع</span>
+                </a>
+                <a href="#jobs" class="sidebar-link flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10">
+                    <i class="fas fa-briefcase w-5 text-center"></i> <span>الوظائف</span>
+                </a>
+                <a href="#branches" class="sidebar-link flex items-center gap-3 p-3 rounded-xl transition hover:bg-white/10">
+                    <i class="fas fa-map-marker-alt w-5 text-center"></i> <span>الفروع</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-white/10">
+                <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl transition hover:bg-red-500/20 text-red-400">
+                    <i class="fas fa-sign-out-alt w-5 text-center"></i> <span>عرض الموقع</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="flex-grow mr-64 p-8">
+            <!-- هيدر الصفحة -->
+            <div class="flex justify-between items-center mb-10">
+                <div>
+                    <h2 class="text-2xl font-black text-primary">مرحباً بك في لوحة الإدارة</h2>
+                    <p class="text-gray-500 text-sm">إليك ملخص ما يحدث في موقع رواق الخليج اليوم.</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="bg-white p-2 rounded-full shadow-sm border border-gray-100 text-primary hover:bg-gray-50 transition">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <div class="flex items-center gap-3 bg-white p-2 pr-4 rounded-full border border-gray-100 shadow-sm">
+                        <span class="text-sm font-bold">المسؤول الرئيسي</span>
+                        <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-white font-black">A</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقات الإحصائيات -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                <div class="admin-card flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-newspaper"></i></div>
+                    <div><p class="text-xs text-gray-500 font-bold uppercase">إجمالي الأخبار</p><p class="text-xl font-black text-primary">12</p></div>
+                </div>
+                <div class="admin-card flex items-center gap-4">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-project-diagram"></i></div>
+                    <div><p class="text-xs text-gray-500 font-bold uppercase">المشاريع القائمة</p><p class="text-xl font-black text-primary">24</p></div>
+                </div>
+                <div class="admin-card flex items-center gap-4">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-briefcase"></i></div>
+                    <div><p class="text-xs text-gray-500 font-bold uppercase">وظائف شاغرة</p><p class="text-xl font-black text-primary">9</p></div>
+                </div>
+                <div class="admin-card flex items-center gap-4">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-map-marker-alt"></i></div>
+                    <div><p class="text-xs text-gray-500 font-bold uppercase">عدد الفروع</p><p class="text-xl font-black text-primary">4</p></div>
+                </div>
+            </div>
+
+            <!-- قسم إدارة الوظائف (كمثال) -->
+            <div id="jobs-section" class="admin-card">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-black text-primary">إدارة الوظائف الشاغرة</h3>
+                    <button class="bg-secondary text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-primary transition shadow-md">
+                        <i class="fas fa-plus ml-2"></i> إضافة وظيفة جديدة
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right border-collapse">
+                        <thead>
+                            <tr class="text-xs text-gray-400 border-b border-gray-100 uppercase tracking-widest">
+                                <th class="pb-3 pr-2">معرف الطلب</th>
+                                <th class="pb-3">المسمى الوظيفي</th>
+                                <th class="pb-3">المدينة</th>
+                                <th class="pb-3">تاريخ النشر</th>
+                                <th class="pb-3 text-center">الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm font-medium">
+                            <tr class="border-b border-gray-50 hover:bg-gray-50 transition">
+                                <td class="py-4 pr-2 text-gray-400">#1102</td>
+                                <td class="py-4 text-primary">مهندس معماري تصميم</td>
+                                <td class="py-4"><span class="px-2 py-1 bg-gray-100 rounded-lg text-xs">الرياض</span></td>
+                                <td class="py-4 text-gray-500">2026/05/01</td>
+                                <td class="py-4">
+                                    <div class="flex justify-center gap-2">
+                                        <button class="w-8 h-8 text-blue-500 hover:bg-blue-50 rounded-lg transition" title="تعديل"><i class="fas fa-edit"></i></button>
+                                        <button class="w-8 h-8 text-red-500 hover:bg-red-50 rounded-lg transition" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-50 hover:bg-gray-50 transition">
+                                <td class="py-4 pr-2 text-gray-400">#3509</td>
+                                <td class="py-4 text-primary">Site Inspector - Electrical</td>
+                                <td class="py-4"><span class="px-2 py-1 bg-gray-100 rounded-lg text-xs">دبي</span></td>
+                                <td class="py-4 text-gray-500">2026/05/25</td>
+                                <td class="py-4">
+                                    <div class="flex justify-center gap-2">
+                                        <button class="w-8 h-8 text-blue-500 hover:bg-blue-50 rounded-lg transition"><i class="fas fa-edit"></i></button>
+                                        <button class="w-8 h-8 text-red-500 hover:bg-red-50 rounded-lg transition"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- أقسام أخرى سريعة للعرض -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                <!-- إدارة الفروع -->
+                <div class="admin-card">
+                    <h3 class="text-lg font-black text-primary mb-4 border-b pb-4">الفروع</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+                            <span class="font-bold">فرع الرياض الرئيسي</span>
+                            <div class="flex gap-2">
+                                <button class="text-xs text-blue-600 font-bold underline">تحديث</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+                            <span class="font-bold">فرع دبي الإقليمي</span>
+                            <div class="flex gap-2">
+                                <button class="text-xs text-blue-600 font-bold underline">تحديث</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- أخبار حديثة -->
+                <div class="admin-card">
+                    <h3 class="text-lg font-black text-primary mb-4 border-b pb-4">آخر الأخبار المنشورة</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gray-200 rounded-lg overflow-hidden shrink-0">
+                                <img src="agreement.jpg" class="w-full h-full object-cover">
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="text-sm font-bold truncate">توقيع اتفاقية استراتيجية للمشاريع السكنية</p>
+                                <span class="text-[10px] text-gray-400">منذ 3 أيام</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal بسيط لإضافة محتوى (مخفي حالياً) -->
+    <div id="addModal" class="fixed inset-0 bg-primary/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-black text-primary">إضافة عنصر جديد</h3>
+                <button onclick="toggleModal()" class="text-gray-400 hover:text-red-500 transition text-2xl">&times;</button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-black text-gray-400 mb-1 uppercase">العنوان / المسمى</label>
+                    <input type="text" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-black text-gray-400 mb-1 uppercase">المدينة / الفرع</label>
+                        <select class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition">
+                            <option>الرياض</option>
+                            <option>جدة</option>
+                            <option>الخبر</option>
+                            <option>دبي</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black text-gray-400 mb-1 uppercase">التصنيف</label>
+                        <input type="text" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-gray-400 mb-1 uppercase">التفاصيل / الوصف</label>
+                    <textarea rows="4" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-black hover:bg-secondary transition-all shadow-lg">حفظ البيانات</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // وظيفة تبديل المودال (لأغراض العرض)
+        function toggleModal() {
+            const modal = document.getElementById('addModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // تفعيل الروابط في القائمة الجانبية
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // ربط أزرار الإضافة (كمثال)
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.innerText.includes('إضافة')) {
+                btn.addEventListener('click', toggleModal);
+            }
+        });
+    </script>
+</body>
+</html>
